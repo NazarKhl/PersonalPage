@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full-Stack Developer Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3a3a3a;
+            --secondary-color: #f0f0f0;
+            --accent-color: #4f46e5;
+            --background-color: #f5f5f5;
+            --text-color: #333;
+            --card-bg: #ffffff;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .dark-theme {
+            --primary-color: #2c2c2c;
+            --secondary-color: #1a1a1a;
+            --accent-color: #6366f1;
+            --background-color: #121212;
+            --text-color: #f0f0f0;
+            --card-bg: #1e1e1e;
+            --shadow-color: rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px var(--shadow-color);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            padding: 4rem 0;
+            animation: slideUp 1s ease-out;
+        }
+
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--accent-color);
+            box-shadow: 0 5px 15px var(--shadow-color);
+            margin-right: 3rem;
+            background-color: #3a3a3a;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px var(--shadow-color);
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+            color: var(--accent-color);
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .experience-grid, .skills-grid, .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .experience-card, .skill-category, .project-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px var(--shadow-color);
+            transition: transform 0.3s;
+        }
+
+        .experience-card:hover, .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .experience-card h3, .project-card h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .experience-date {
+            color: #777;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .skill-category h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            background-color: var(--secondary-color);
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+
+        .skills-list li:hover {
+            transform: translateX(5px);
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .language-item {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 3px 10px var(--shadow-color);
+        }
+
+        .education-item {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px var(--shadow-color);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-img {
+                margin-right: 0;
+                margin-bottom: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">DevPortfolio</div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="theme-toggle" id="themeToggle">🌙</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero" id="about">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNTAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgMjUwIDI1MCI+PHJlY3Qgd2lkdGg9IjI1MCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiMzYTNhM2EiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI0IiBmaWxsPSJ3aGl0ZSI+MjUweDI1MDwvdGV4dD48L3N2Zz4=" alt="Developer Photo" class="profile-img">
+            <div class="hero-content">
+                <h1>Full-Stack Developer</h1>
+                <p>Full-Stack Developer with ~1 year of web development experience. My main tech stack includes Java, Next.js (React), TypeScript, Tailwind CSS and Angular. I build secure, scalable features that deliver real user impact, like real-time collaboration tools and personalized workout tracking, boosting engagement and productivity. Experienced in Agile environments, collaborating with cross-functional teams, and delivering measurable impact on business outcomes. Strong problem-solving skills, fast learner, and effective communicator.</p>
+                <a href="#contact" class="btn">Contact Me</a>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <h3>Full-Stack Developer | NoteFlow (Short-term project contract)</h3>
+                    <p class="experience-date">Mar - July 2025</p>
+                    <ul>
+                        <li>Developed a secure authentication system (JWT + RBAC), significantly strengthening platform security.</li>
+                        <li>Built a real-time collaborative note editor, enhancing team productivity and simplifying multi-user workflow.</li>
+                        <li>Implemented an analytics microservice to provide actionable insights for better user experience and feature planning.</li>
+                        <li>Boosted user engagement by showing real-time progress.</li>
+                    </ul>
+                    <p><strong>Tech Stack:</strong> Next.js (React), Java, TypeScript, MySQL</p>
+                </div>
+                
+                <div class="experience-card">
+                    <h3>Full-stack Developer | Sprinter IT Sp. z o.o. (University Internship)</h3>
+                    <p class="experience-date">Aug - Sept 2024</p>
+                    <ul>
+                        <li>Created an admin module for bulk user operations, streamlining workflows and reducing manual effort.</li>
+                        <li>Integrated logging and audit systems to improve platform reliability and operational transparency.</li>
+                    </ul>
+                    <p><strong>Tech Stack:</strong> Next.js (React), Java, MySQL</p>
+                </div>
+                
+                <div class="experience-card">
+                    <h3>Frontend Developer | FitTy (Short-term project contract)</h3>
+                    <p class="experience-date">Feb - Jun 2024</p>
+                    <ul>
+                        <li>Developed drag-and-drop workout planner for intuitive training plans.</li>
+                        <li>Implemented real-time data tracking and progress visualization, helping users monitor their workouts.</li>
+                        <li>Enhanced user engagement through responsive and accessible UI with personalized workout feedback.</li>
+                    </ul>
+                    <p><strong>Tech Stack:</strong> Next.js (React), TypeScript, Tailwind CSS</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <ul class="skills-list">
+                        <li>Next.js (React)</li>
+                        <li>Angular</li>
+                        <li>TypeScript/JavaScript</li>
+                        <li>Tailwind CSS</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <ul class="skills-list">
+                        <li>Java Spring Boot</li>
+                        <li>Node.js</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Databases</h3>
+                    <ul class="skills-list">
+                        <li>MySQL</li>
+                        <li>PostgreSQL</li>
+                        <li>MongoDB</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Tools</h3>
+                    <ul class="skills-list">
+                        <li>Git/GitHub</li>
+                        <li>Postman</li>
+                        <li>Figma (for UI prototyping)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Personal Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Task Management App</h3>
+                    <p>A full-stack application for managing tasks with real-time updates, drag-and-drop functionality, and team collaboration features.</p>
+                    <p><strong>Tech:</strong> Next.js, Java Spring Boot, MongoDB</p>
+                </div>
+                
+                <div class="project-card">
+                    <h3>E-commerce Platform</h3>
+                    <p>Complete e-commerce solution with product catalog, shopping cart, user authentication, and payment processing integration.</p>
+                    <p><strong>Tech:</strong> Angular, Node.js, PostgreSQL, Stripe API</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education & Certifications</h2>
+            <div class="education-item">
+                <h3>BSc in Computer Science — University</h3>
+                <p>2022 - 2026</p>
+            </div>
+            <div class="education-item">
+                <h3>Full-Stack Engineer – Codecademy</h3>
+                <p>2024</p>
+            </div>
+            <div class="education-item">
+                <h3>Java Full Stack Spring Boot and Angular – Udemy</h3>
+                <p>2023</p>
+            </div>
+        </section>
+
+        <section id="languages">
+            <h2>Languages</h2>
+            <div class="languages-grid">
+                <div class="language-item">
+                    <h3>English</h3>
+                    <p>B2</p>
+                </div>
+                <div class="language-item">
+                    <h3>Polish</h3>
+                    <p>C1</p>
+                </div>
+                <div class="language-item">
+                    <h3>Ukrainian</h3>
+                    <p>Native</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+phone</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>email</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Country</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Full-Stack Developer Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        // Check for saved theme preference or respect OS preference
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+            body.classList.add('dark-theme');
+            themeToggle.textContent = '☀️';
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            
+            if (body.classList.contains('dark-theme')) {
+                localStorage.setItem('theme', 'dark');
+                themeToggle.textContent = '☀️';
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeToggle.textContent = '🌙';
+            }
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Animation on scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all section elements for scroll animation
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = 0;
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

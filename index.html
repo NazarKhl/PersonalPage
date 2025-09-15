@@ -7,91 +7,102 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #3a3a3a;
-            --secondary-color: #f0f0f0;
-            --accent-color: #4f46e5;
-            --background-color: #f5f5f5;
-            --text-color: #333;
+            --primary-bg: #ffffff;
+            --secondary-bg: #f5f5f7;
+            --text-primary: #1d1d1f;
+            --text-secondary: #86868b;
+            --accent: #0071e3;
             --card-bg: #ffffff;
-            --shadow-color: rgba(0, 0, 0, 0.1);
+            --shadow: rgba(0, 0, 0, 0.05);
+            --nav-bg: rgba(255, 255, 255, 0.8);
+            --footer-bg: #f5f5f7;
+            --transition: all 0.3s ease;
         }
 
         .dark-theme {
-            --primary-color: #2c2c2c;
-            --secondary-color: #1a1a1a;
-            --accent-color: #6366f1;
-            --background-color: #121212;
-            --text-color: #f0f0f0;
-            --card-bg: #1e1e1e;
-            --shadow-color: rgba(0, 0, 0, 0.3);
+            --primary-bg: #000000;
+            --secondary-bg: #1d1d1f;
+            --text-primary: #f5f5f7;
+            --text-secondary: #a1a1a6;
+            --accent: #2997ff;
+            --card-bg: #1d1d1f;
+            --shadow: rgba(255, 255, 255, 0.05);
+            --nav-bg: rgba(0, 0, 0, 0.8);
+            --footer-bg: #1d1d1f;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            transition: background-color 0.3s, color 0.3s;
+            transition: var(--transition);
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--background-color);
-            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-primary);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 2rem;
         }
 
+        /* Navigation */
         header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 1rem 0;
-            position: sticky;
+            position: fixed;
             top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px var(--shadow-color);
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background-color: var(--nav-bg);
+            border-bottom: 1px solid var(--shadow);
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 1.2rem 0;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            animation: fadeIn 1s ease-in;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 2rem;
+            gap: 2.5rem;
         }
 
         .nav-links a {
-            color: white;
+            color: var(--text-primary);
             text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
             position: relative;
-            padding: 0.5rem 0;
         }
 
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: -5px;
             left: 0;
             width: 0;
             height: 2px;
-            background-color: var(--accent-color);
+            background-color: var(--accent);
             transition: width 0.3s ease;
         }
 
@@ -102,111 +113,150 @@
         .theme-toggle {
             background: none;
             border: none;
-            color: white;
+            color: var(--text-primary);
             cursor: pointer;
             font-size: 1.2rem;
         }
 
+        /* Hero Section */
         .hero {
+            padding: 10rem 0 5rem;
+            text-align: center;
+            min-height: 100vh;
             display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            padding: 4rem 0;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, var(--accent), #a2c5ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
             animation: slideUp 1s ease-out;
         }
 
         .profile-img {
-            width: 250px;
-            height: 250px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid var(--accent-color);
-            box-shadow: 0 5px 15px var(--shadow-color);
-            margin-right: 3rem;
+            margin: 2rem auto;
+            border: 4px solid var(--accent);
+            box-shadow: 0 10px 30px rgba(0, 113, 227, 0.2);
+            animation: scaleIn 1s ease-out;
             background-color: #3a3a3a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 0.9rem;
+            text-align: center;
         }
 
-        .hero-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--accent-color);
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-        }
-
+        /* Buttons */
         .btn {
             display: inline-block;
-            background-color: var(--accent-color);
+            background-color: var(--accent);
             color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 500;
+            font-size: 1.1rem;
             transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeIn 1.5s ease-out;
         }
 
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px var(--shadow-color);
+            box-shadow: 0 10px 20px rgba(0, 113, 227, 0.3);
         }
 
+        /* Sections */
         section {
-            padding: 4rem 0;
+            padding: 6rem 0;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--secondary-bg);
         }
 
         h2 {
             text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2rem;
-            color: var(--accent-color);
+            margin-bottom: 3.5rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
             position: relative;
         }
 
         h2::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background-color: var(--accent-color);
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent);
+            border-radius: 2px;
         }
 
+        /* Cards */
         .experience-grid, .skills-grid, .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
-        .experience-card, .skill-category, .project-card {
+        .experience-card, .skill-category, .project-card, .education-item {
             background-color: var(--card-bg);
-            border-radius: 10px;
-            padding: 1.5rem;
-            box-shadow: 0 5px 15px var(--shadow-color);
-            transition: transform 0.3s;
+            border-radius: 18px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--shadow);
         }
 
         .experience-card:hover, .project-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px var(--shadow);
         }
 
         .experience-card h3, .project-card h3 {
-            color: var(--accent-color);
+            color: var(--accent);
             margin-bottom: 1rem;
+            font-size: 1.4rem;
         }
 
         .experience-date {
-            color: #777;
+            color: var(--text-secondary);
             font-style: italic;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
+            display: block;
         }
 
+        /* Skills */
         .skill-category h3 {
-            color: var(--accent-color);
-            margin-bottom: 1rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
         }
 
         .skills-list {
@@ -214,62 +264,111 @@
         }
 
         .skills-list li {
-            margin-bottom: 0.5rem;
-            padding: 0.5rem;
-            background-color: var(--secondary-color);
-            border-radius: 5px;
+            margin-bottom: 0.8rem;
+            padding: 0.8rem 1rem;
+            background-color: var(--secondary-bg);
+            border-radius: 10px;
             transition: transform 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .skills-list li i {
+            color: var(--accent);
+            font-size: 1.2rem;
         }
 
         .skills-list li:hover {
             transform: translateX(5px);
-            background-color: var(--accent-color);
+            background-color: var(--accent);
             color: white;
         }
 
+        .skills-list li:hover i {
+            color: white;
+        }
+
+        /* Projects */
+        .project-card p {
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .tech-tag {
+            background-color: var(--accent);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* Contact */
         .contact-info {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 2rem;
+            gap: 2.5rem;
+            margin-top: 3rem;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.8rem;
+            padding: 1rem 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 5px 15px var(--shadow);
+            transition: transform 0.3s;
         }
 
+        .contact-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+
+        /* Languages */
         .languages-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
+            gap: 1.5rem;
         }
 
         .language-item {
             background-color: var(--card-bg);
-            padding: 1rem;
-            border-radius: 5px;
-            text-align: center;
-            box-shadow: 0 3px 10px var(--shadow-color);
-        }
-
-        .education-item {
-            background-color: var(--card-bg);
             padding: 1.5rem;
-            border-radius: 10px;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 5px 15px var(--shadow-color);
-        }
-
-        footer {
-            background-color: var(--primary-color);
-            color: white;
+            border-radius: 12px;
             text-align: center;
-            padding: 2rem 0;
-            margin-top: 3rem;
+            box-shadow: 0 5px 15px var(--shadow);
+            transition: transform 0.3s;
         }
 
+        .language-item:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--footer-bg);
+            color: var(--text-secondary);
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 3rem;
+            border-top: 1px solid var(--shadow);
+        }
+
+        /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -286,19 +385,33 @@
             }
         }
 
+        @keyframes scaleIn {
+            from { 
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to { 
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
+            .hero h1 {
+                font-size: 2.5rem;
             }
             
-            .profile-img {
-                margin-right: 0;
-                margin-bottom: 2rem;
+            .hero p {
+                font-size: 1.2rem;
             }
             
             .nav-links {
                 display: none;
+            }
+            
+            .experience-grid, .skills-grid, .projects-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -322,11 +435,11 @@
 
     <main class="container">
         <section class="hero" id="about">
-            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNTAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgMjUwIDI1MCI+PHJlY3Qgd2lkdGg9IjI1MCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiMzYTNhM2EiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI0IiBmaWxsPSJ3aGl0ZSI+MjUweDI1MDwvdGV4dD48L3N2Zz4=" alt="Developer Photo" class="profile-img">
+            <div class="profile-img">Developer Photo</div>
             <div class="hero-content">
                 <h1>Full-Stack Developer</h1>
-                <p>Full-Stack Developer with ~1 year of web development experience. My main tech stack includes Java, Next.js (React), TypeScript, Tailwind CSS and Angular. I build secure, scalable features that deliver real user impact, like real-time collaboration tools and personalized workout tracking, boosting engagement and productivity. Experienced in Agile environments, collaborating with cross-functional teams, and delivering measurable impact on business outcomes. Strong problem-solving skills, fast learner, and effective communicator.</p>
-                <a href="#contact" class="btn">Contact Me</a>
+                <p>Building secure, scalable web applications with modern technologies</p>
+                <a href="#contact" class="btn">Get in Touch</a>
             </div>
         </section>
 
@@ -334,36 +447,49 @@
             <h2>Professional Experience</h2>
             <div class="experience-grid">
                 <div class="experience-card">
-                    <h3>Full-Stack Developer | NoteFlow (Short-term project contract)</h3>
-                    <p class="experience-date">Mar - July 2025</p>
+                    <h3>Full-Stack Developer | NoteFlow</h3>
+                    <span class="experience-date">Mar - July 2025</span>
                     <ul>
-                        <li>Developed a secure authentication system (JWT + RBAC), significantly strengthening platform security.</li>
-                        <li>Built a real-time collaborative note editor, enhancing team productivity and simplifying multi-user workflow.</li>
-                        <li>Implemented an analytics microservice to provide actionable insights for better user experience and feature planning.</li>
-                        <li>Boosted user engagement by showing real-time progress.</li>
+                        <li>Developed a secure authentication system (JWT + RBAC)</li>
+                        <li>Built a real-time collaborative note editor</li>
+                        <li>Implemented an analytics microservice</li>
+                        <li>Boosted user engagement by showing real-time progress</li>
                     </ul>
-                    <p><strong>Tech Stack:</strong> Next.js (React), Java, TypeScript, MySQL</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">MySQL</span>
+                    </div>
                 </div>
                 
                 <div class="experience-card">
-                    <h3>Full-stack Developer | Sprinter IT Sp. z o.o. (University Internship)</h3>
-                    <p class="experience-date">Aug - Sept 2024</p>
+                    <h3>Full-stack Developer | Sprinter IT</h3>
+                    <span class="experience-date">Aug - Sept 2024</span>
                     <ul>
-                        <li>Created an admin module for bulk user operations, streamlining workflows and reducing manual effort.</li>
-                        <li>Integrated logging and audit systems to improve platform reliability and operational transparency.</li>
+                        <li>Created an admin module for bulk user operations</li>
+                        <li>Integrated logging and audit systems</li>
                     </ul>
-                    <p><strong>Tech Stack:</strong> Next.js (React), Java, MySQL</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">MySQL</span>
+                    </div>
                 </div>
                 
                 <div class="experience-card">
-                    <h3>Frontend Developer | FitTy (Short-term project contract)</h3>
-                    <p class="experience-date">Feb - Jun 2024</p>
+                    <h3>Frontend Developer | FitTy</h3>
+                    <span class="experience-date">Feb - Jun 2024</span>
                     <ul>
-                        <li>Developed drag-and-drop workout planner for intuitive training plans.</li>
-                        <li>Implemented real-time data tracking and progress visualization, helping users monitor their workouts.</li>
-                        <li>Enhanced user engagement through responsive and accessible UI with personalized workout feedback.</li>
+                        <li>Developed drag-and-drop workout planner</li>
+                        <li>Implemented real-time data tracking</li>
+                        <li>Enhanced user engagement through responsive UI</li>
                     </ul>
-                    <p><strong>Tech Stack:</strong> Next.js (React), TypeScript, Tailwind CSS</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Tailwind CSS</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -374,36 +500,36 @@
                 <div class="skill-category">
                     <h3>Frontend</h3>
                     <ul class="skills-list">
-                        <li>Next.js (React)</li>
-                        <li>Angular</li>
-                        <li>TypeScript/JavaScript</li>
-                        <li>Tailwind CSS</li>
+                        <li><i class="fab fa-react"></i> Next.js (React)</li>
+                        <li><i class="fab fa-angular"></i> Angular</li>
+                        <li><i class="fab fa-js-square"></i> TypeScript/JavaScript</li>
+                        <li><i class="fas fa-paint-brush"></i> Tailwind CSS</li>
                     </ul>
                 </div>
                 
                 <div class="skill-category">
                     <h3>Backend</h3>
                     <ul class="skills-list">
-                        <li>Java Spring Boot</li>
-                        <li>Node.js</li>
+                        <li><i class="fab fa-java"></i> Java Spring Boot</li>
+                        <li><i class="fab fa-node-js"></i> Node.js</li>
                     </ul>
                 </div>
                 
                 <div class="skill-category">
                     <h3>Databases</h3>
                     <ul class="skills-list">
-                        <li>MySQL</li>
-                        <li>PostgreSQL</li>
-                        <li>MongoDB</li>
+                        <li><i class="fas fa-database"></i> MySQL</li>
+                        <li><i class="fas fa-database"></i> PostgreSQL</li>
+                        <li><i class="fas fa-database"></i> MongoDB</li>
                     </ul>
                 </div>
                 
                 <div class="skill-category">
                     <h3>Tools</h3>
                     <ul class="skills-list">
-                        <li>Git/GitHub</li>
-                        <li>Postman</li>
-                        <li>Figma (for UI prototyping)</li>
+                        <li><i class="fab fa-git-alt"></i> Git/GitHub</li>
+                        <li><i class="fas fa-code"></i> Postman</li>
+                        <li><i class="fas fa-pencil-ruler"></i> Figma</li>
                     </ul>
                 </div>
             </div>
@@ -415,13 +541,22 @@
                 <div class="project-card">
                     <h3>Task Management App</h3>
                     <p>A full-stack application for managing tasks with real-time updates, drag-and-drop functionality, and team collaboration features.</p>
-                    <p><strong>Tech:</strong> Next.js, Java Spring Boot, MongoDB</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">Spring Boot</span>
+                        <span class="tech-tag">MongoDB</span>
+                    </div>
                 </div>
                 
                 <div class="project-card">
                     <h3>E-commerce Platform</h3>
                     <p>Complete e-commerce solution with product catalog, shopping cart, user authentication, and payment processing integration.</p>
-                    <p><strong>Tech:</strong> Angular, Node.js, PostgreSQL, Stripe API</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Angular</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Stripe</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -530,7 +665,7 @@
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80,
+                        top: targetElement.offsetTop - 100,
                         behavior: 'smooth'
                     });
                 }

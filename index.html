@@ -11,7 +11,7 @@
   <header>
     <div class="container">
       <nav>
-        <div class="logo">Nazar Khlivnyi</div>
+        <a href="#" class="logo">Nazar </a>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
@@ -30,16 +30,36 @@
 
   <main>
     <!-- Hero -->
-    <section class="hero container" id="about">
-      <div class="hero-content">
-        <h1>Hi, I am Nazar <span class="accent-text">Khlivnyi</span></h1>
-        <p>Full-Stack Developer with ~1 year experience in Java, Node.js React and TypeScript. I build secure, scalable web apps that create real user impact, thrive in Agile teams, and bring energy to every project.</p>
-        <a href="#contact" class="btn">Get in Touch <i class="fas fa-arrow-right"></i></a>
-      </div>
-      <div class="hero-image">
-        <img src="img.png" alt="Developer Photo"/>
-      </div>
-    </section>
+<section class="hero container">
+    <div class="hero-content">
+      <h1>Hi, My name is <span class="accent-text">Nazar</span></h1>
+      <h2>
+        <span class="static-text">I am a</span> 
+        <span class="dynamic-text-container">
+          <span id="dynamic-text"></span><span class="cursor">|</span>
+        </span>
+      </h2>
+      <a href="#contact" class="btn">Get in Touch <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="hero-image">
+      <img src="img.png" alt="Developer Photo"/>
+    </div>
+  </section>
+
+  <!-- About -->
+<section id="about">
+  <div class="container">
+    <h2>About Me</h2>
+    <p>
+      Full-Stack Developer with ~1 year of web development experience. My main tech stack includes Java, 
+      Next.js (React), TypeScript, Tailwind CSS, and Angular. I build secure, scalable features that deliver
+      real user impact, like real-time collaboration tools and personalized workout tracking, boosting
+      engagement and productivity. Experienced in Agile environments, collaborating with cross-functional
+      teams, and delivering measurable impact on business outcomes. Strong problem-solving skills, fast
+      learner, and effective communicator.
+    </p>
+  </div>
+</section>
 
     <!-- Experience -->
     <section id="experience">
@@ -135,13 +155,19 @@
     <div class="grid">
       <div class="project-card">
         <div class="project-preview">
-          <div class="project-image">
-            <div class="image-placeholder">Typing Speed Tester</div>
-          </div>
+         <div class="project-image">
+  <div class="project-icon">
+    <span class="key">A</span>
+    <span class="key">S</span>
+    <span class="key">D</span>
+    <span class="key">F</span>
+  </div>
+  <div class="project-name">Typing Speed Tester</div>
+</div>
           <div class="project-overlay">
             <div class="project-info">
               <h3>Typing Speed Tester</h3>
-              <p>Frontend app with real-time updates, drag & drop and collaboration features.</p>
+              <p>Real-time typing analytics with collaborative practice.</p>
               <div class="tech-tags">
                 <span class="tag">React</span><span class="tag">TailwindCSS</span>
               </div>
@@ -156,9 +182,13 @@
 
             <div class="project-card">
         <div class="project-preview">
-          <div class="project-image">
-            <div class="image-placeholder">Event Management App</div>
-          </div>
+<div class="project-image event-demo">
+  <div class="notebook">
+    <div class="page"></div>
+    <div class="hand">✏️</div>
+  </div>
+  <div class="project-name">Event Management App</div>
+</div>
           <div class="project-overlay">
             <div class="project-info">
               <h3>Event Management App</h3>
@@ -177,9 +207,15 @@
       
       <div class="project-card">
         <div class="project-preview">
-          <div class="project-image">
-            <div class="image-placeholder">E-commerce Preview</div>
-          </div>
+          <div class="project-image ecommerce-demo">
+    <div class="cart">
+      🛒
+      <div class="item">📦</div>
+      <div class="item">👕</div>
+      <div class="item">💳</div>
+    </div>
+    <div class="project-name">E-commerce Platform</div>
+  </div>
           <div class="project-overlay">
             <div class="project-info">
               <h3>E-commerce Platform</h3>

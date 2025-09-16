@@ -119,7 +119,7 @@
       display: none; 
       z-index: 1001;
     }
-
+    
     /* Hero */
     .hero {
       display: flex;
@@ -526,7 +526,6 @@
       .menu-toggle { 
         display: inline-block; 
         position: absolute;
-        z-index: 10001;
       }
       
       .hero-content h1 {
@@ -969,3 +968,8 @@
   text-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
+@media (max-width: 968px) {
+  .dynamic-text-container, .static-text {
+    font-size: 2.2rem;
+  }
+}

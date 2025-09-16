@@ -3,23 +3,11 @@ const themeToggle = document.getElementById("themeToggle");
     const navLinks = document.querySelector(".nav-links");
     const body = document.body;
 
-    const savedTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
-      body.classList.add("dark-theme");
-      themeToggle.textContent = "☀️";
-    }
-
-    themeToggle.addEventListener("click", () => {
-      body.classList.toggle("dark-theme");
-      if (body.classList.contains("dark-theme")) {
-        themeToggle.textContent = "☀️";
-        localStorage.setItem("theme", "dark");
-      } else {
-        themeToggle.textContent = "🌙";
-        localStorage.setItem("theme", "light");
-      }
-    });
+const savedTheme = localStorage.getItem("theme");
+document.body.classList.add("dark-theme");
+if (savedTheme === "light") {
+  localStorage.setItem("theme", "dark");
+}
 
     menuToggle.addEventListener("click", () => {
       navLinks.classList.toggle("active");
@@ -70,6 +58,5 @@ const themeToggle = document.getElementById("themeToggle");
       }
     }
 
-    // Запускаємо ефект після завантаження сторінки
     document.addEventListener('DOMContentLoaded', typeEffect);
 

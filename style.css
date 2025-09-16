@@ -525,6 +525,8 @@
       
       .menu-toggle { 
         display: inline-block; 
+        position: absolute;
+        z-index: 10001;
       }
       
       .hero-content h1 {
@@ -966,3 +968,4 @@
   color: white;
   text-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
+

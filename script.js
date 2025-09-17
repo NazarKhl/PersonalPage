@@ -59,4 +59,3 @@ if (savedTheme === "light") {
     }
 
     document.addEventListener('DOMContentLoaded', typeEffect);
-

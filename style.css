@@ -1029,3 +1029,12 @@
       .cv-button {
         padding: 12px 24px;
       }}
+
+    .ai-data {
+      font-size: 1.5rem;
+    }
+
+          #about p {
+        font-size: 1.6rem;
+        padding: 0 15px;
+      }

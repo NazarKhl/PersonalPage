@@ -1006,7 +1006,9 @@
     .cv-button:active {
       transform: translateY(0);
     }
-    
+    .about-p {
+      margin-left: -20px;
+    }
     .cv-button i {
       margin-right: 10px;
       font-size: 1.2rem;

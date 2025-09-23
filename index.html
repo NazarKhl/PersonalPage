@@ -1,310 +1,381 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Full-Stack Developer Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <div class="container">
-      <nav>
-        <a href="#" class="logo">Nazar </a>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#skills">Tech Stack</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#ai">AI & Innovation</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div>
-          <button class="theme-toggle" id="themeToggle"></button>
-          <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <!-- Hero -->
-<section class="hero container">
-    <div class="hero-content">
-      <h1>Hi, My name is <span class="accent-text">Nazar</span></h1>
-      <h2>
-        <span class="static-text">I am a</span> 
-        <span class="dynamic-text-container">
-          <span id="dynamic-text"></span><span class="cursor">|</span>
-        </span>
-      </h2>
-      <a href="#contact" class="btn">Get in Touch <i class="fas fa-arrow-right"></i></a>
-    </div>
-    <div class="hero-image">
-      <img src="img.png" alt="Developer Photo"/>
-    </div>
-  </section>
-
-  <!-- About -->
-<section id="about">
-  <div class="container">
-    <h2>About Me</h2>
-    <p class="about-p">
-      Full-Stack Developer with ~1 year of experience building scalable high-impact web applications improving
-      user engagement and productivity developed real-time collaboration tools increasing team efficiency
-      implemented personalized workout tracking boosting retention optimized application performance and
-      delivered complex projects in Agile teams strong problem-solving skills fast learner effective communicator
-    </p>
-    <div class="cv-download">
-        <a href="NazarKhlivnyi_FullstackCV.pdf" class="cv-button" download>
-          <i class="fas fa-download"></i> Download CV (PDF)
-        </a>
-      </div>
-  </div>
-</section>
-
-    <!-- Experience -->
-    <section id="experience">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Full-Stack Developer Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
       <div class="container">
-        <h2>Professional Experience</h2>
-        <div class="grid">
-          <div class="card">
-            <h3>Full-Stack Developer | NoteFlow</h3>
-            <span class="date">Mar - Jul 2025</span>
-            <ul>
-              <li>Secure authentication system JWT + RBAC</li>
-              <li>Caching layer to speed up frequently accessed analytics data</li>
-              <li>Worked on Document Management System</li>
-            </ul>
-            <div class="tech-tags">
-              <span class="tag">React</span><span class="tag">Redux Toolkit</span><span class="tag">Vite</span><span class="tag">Axios</span><span class="tag">Java</span><span class="tag">TypeScript</span><span class="tag">MySQL</span>
-            </div>
+        <nav>
+          <a href="#" class="logo">Nazar </a>
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Tech Stack</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#ai">AI & Innovation</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <div>
+            <button class="theme-toggle" id="themeToggle"></button>
+            <button class="menu-toggle" id="menuToggle">
+              <i class="fas fa-bars"></i>
+            </button>
           </div>
-          <div class="card">
-            <h3>Full-Stack Developer | Sprinter IT</h3>
-            <span class="date">Aug - Sept 2024</span>
-            <ul>
-              <li>Admin module for bulk user operations</li>
-              <li>Logging & audit system integration</li>
-            </ul>
-            <div class="tech-tags">
-              <span class="tag">React</span><span class="tag">Java</span><span class="tag">TypeScript</span><span class="tag">MySQL</span>
-            </div>
-          </div>
-          <div class="card">
-            <h3>Frontend Developer | FitTy</h3>
-            <span class="date">Feb - Jun 2024</span>
-            <ul>
-              <li>Drag-and-drop workout planner</li>
-              <li>Real-time data tracking & progress</li>
-              <li>Implemented tab-based navigation system</li>
-            </ul>
-            <div class="tech-tags">
-              <span class="tag">React</span><span class="tag">Axios</span><span class="tag">TypeScript</span><span class="tag">Tailwind CSS</span>
-            </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero container">
+        <div class="hero-content">
+          <h1>Hi, My name is <span class="accent-text">Nazar</span></h1>
+          <h2>
+            <span class="static-text">I am a</span>
+            <span class="dynamic-text-container">
+              <span id="dynamic-text"></span><span class="cursor">|</span>
+            </span>
+          </h2>
+          <a href="#contact" class="btn"
+            >Get in Touch <i class="fas fa-arrow-right"></i
+          ></a>
+        </div>
+        <div class="hero-image">
+          <img src="img.png" alt="Developer Photo" />
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about">
+        <div class="container">
+          <h2>About Me</h2>
+          <p class="about-p">
+            Full-Stack Developer with ~1 year of experience building scalable
+            high-impact web applications improving user engagement and
+            productivity developed real-time collaboration tools increasing team
+            efficiency implemented personalized workout tracking boosting
+            retention optimized application performance and delivered complex
+            projects in Agile teams strong problem-solving skills fast learner
+            effective communicator
+          </p>
+          <div class="cv-download">
+            <a href="NazarKhlivnyi_FullstackCV.pdf" class="cv-button" download>
+              <i class="fas fa-download"></i> Download CV (PDF)
+            </a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Skills  -->
-    <section id="skills">
-      <div class="container">
-        <h2>Technical Skills</h2>
-        <div class="skills-container">
-          <div class="skill-category">
-            <h3>Frontend</h3>
-            <ul class="skills-list">
-              <li><i class="fab fa-react"></i> React (Next.js)</li>
-              <li><i class="fab fa-angular"></i> Angular</li>
-              <li><i class="fab fa-js"></i> TypeScript / JavaScript</li>
-              <li><i class="fas fa-paint-brush"></i> Tailwind CSS</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3>Backend</h3>
-            <ul class="skills-list">
-              <li><i class="fab fa-java"></i> Java Spring Boot</li>
-              <li><i class="fab fa-node-js"></i> Node.js</li>
-              <li><i class="fas fa-server"></i> RESTful APIs</li>
-              <li><i class="fas fa-bolt"></i> Microservices</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3>Databases</h3>
-            <ul class="skills-list">
-              <li><i class="fas fa-database"></i> MySQL</li>
-              <li><i class="fas fa-database"></i> PostgreSQL</li>
-              <li><i class="fas fa-database"></i> MongoDB</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3>Tools</h3>
-            <ul class="skills-list">
-              <li><i class="fab fa-git-alt"></i> Git/GitHub</li>
-              <li><i class="fas fa-code"></i> Postman</li>
-              <li><i class="fas fa-pencil-ruler"></i> Figma</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects -->
-<section id="projects">
-  <div class="container">
-    <h2>Personal Projects</h2>
-    <div class="grid">
-      <div class="project-card">
-        <div class="project-preview">
-         <div class="project-image">
-  <div class="project-icon">
-    <span class="key">A</span>
-    <span class="key">S</span>
-    <span class="key">D</span>
-    <span class="key">F</span>
-  </div>
-  <div class="project-name">Typing Speed Tester</div>
-</div>
-          <div class="project-overlay">
-            <div class="project-info">
-              <h3>Typing Speed Tester</h3>
-              <p>Real-time typing analytics with collaborative practice.</p>
+      <!-- Experience -->
+      <section id="experience">
+        <div class="container">
+          <h2>Professional Experience</h2>
+          <div class="grid">
+            <div class="card">
+              <h3>Full-Stack Developer | NoteFlow</h3>
+              <span class="date">Mar - Jul 2025</span>
+              <ul>
+                <li>Secure authentication system JWT + RBAC</li>
+                <li>
+                  Caching layer to speed up frequently accessed analytics data
+                </li>
+                <li>Worked on Document Management System</li>
+              </ul>
               <div class="tech-tags">
-                <span class="tag">React</span><span class="tag">TailwindCSS</span>
+                <span class="tag">React</span
+                ><span class="tag">Redux Toolkit</span
+                ><span class="tag">Vite</span><span class="tag">Axios</span
+                ><span class="tag">Java</span><span class="tag">TypeScript</span
+                ><span class="tag">MySQL</span>
               </div>
-              <a href="https://github.com/NazarKhl/TypingSpeedTester" class="project-link" target="_blank">
-                View on GitHub
-                <i class="fas fa-arrow-right"></i>
-              </a>
+            </div>
+            <div class="card">
+              <h3>Full-Stack Developer | Sprinter IT</h3>
+              <span class="date">Aug - Sept 2024</span>
+              <ul>
+                <li>Admin module for bulk user operations</li>
+                <li>Logging & audit system integration</li>
+              </ul>
+              <div class="tech-tags">
+                <span class="tag">React</span><span class="tag">Java</span
+                ><span class="tag">TypeScript</span
+                ><span class="tag">MySQL</span>
+              </div>
+            </div>
+            <div class="card">
+              <h3>Frontend Developer | FitTy</h3>
+              <span class="date">Feb - Jun 2024</span>
+              <ul>
+                <li>Drag-and-drop workout planner</li>
+                <li>Real-time data tracking & progress</li>
+                <li>Implemented tab-based navigation system</li>
+              </ul>
+              <div class="tech-tags">
+                <span class="tag">React</span><span class="tag">Axios</span
+                ><span class="tag">TypeScript</span
+                ><span class="tag">Tailwind CSS</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <!-- Skills  -->
+      <section id="skills">
+        <div class="container">
+          <h2>Technical Skills</h2>
+          <div class="skills-container">
+            <div class="skill-category">
+              <h3>Frontend</h3>
+              <ul class="skills-list">
+                <li><i class="fab fa-react"></i> React (Next.js)</li>
+                <li><i class="fab fa-angular"></i> Angular</li>
+                <li><i class="fab fa-js"></i> TypeScript / JavaScript</li>
+                <li><i class="fas fa-paint-brush"></i> Tailwind CSS</li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h3>Backend</h3>
+              <ul class="skills-list">
+                <li><i class="fab fa-java"></i> Java Spring Boot</li>
+                <li><i class="fab fa-node-js"></i> Node.js</li>
+                <li><i class="fas fa-server"></i> RESTful APIs</li>
+                <li><i class="fas fa-bolt"></i> Microservices</li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h3>Databases</h3>
+              <ul class="skills-list">
+                <li><i class="fas fa-database"></i> MySQL</li>
+                <li><i class="fas fa-database"></i> PostgreSQL</li>
+                <li><i class="fas fa-database"></i> MongoDB</li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h3>Tools</h3>
+              <ul class="skills-list">
+                <li><i class="fab fa-git-alt"></i> Git/GitHub</li>
+                <li><i class="fas fa-code"></i> Postman</li>
+                <li><i class="fas fa-pencil-ruler"></i> Figma</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects">
+        <div class="container">
+          <h2>Personal Projects</h2>
+          <div class="grid">
+            <div class="project-card">
+              <div class="project-preview">
+                <div class="project-image">
+                  <div class="project-name">Typing Speed Tester</div>
+                </div>
+                <div class="project-overlay">
+                  <div class="project-info">
+                    <h3>Typing Speed Tester</h3>
+                    <p>
+                      Real-time typing analytics with collaborative practice.
+                    </p>
+                    <div class="tech-tags">
+                      <span class="tag">React</span
+                      ><span class="tag">TailwindCSS</span>
+                    </div>
+                    <a
+                      href="https://github.com/NazarKhl/TypingSpeedTester"
+                      class="project-link"
+                      target="_blank"
+                    >
+                      View on GitHub
+                      <i class="fas fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <div class="project-card">
-        <div class="project-preview">
-<div class="project-image event-demo">
-  <div class="notebook">
-    <div class="page"></div>
-    <div class="hand">✏️</div>
-  </div>
-  <div class="project-name">Event Management App</div>
-</div>
-          <div class="project-overlay">
-            <div class="project-info">
-              <h3>Event Management App</h3>
-              <p>Frontend app with real-time updates, drag & drop and collaboration features.</p>
-              <div class="tech-tags">
-                <span class="tag">React</span><span class="tag">TailwindCSS</span><span class="tag">TypeScript</span>
+              <div class="project-preview">
+                <div class="project-image event-demo">
+                  <div class="project-name">Event Management App</div>
+                </div>
+                <div class="project-overlay">
+                  <div class="project-info">
+                    <h3>Event Management App</h3>
+                    <p>
+                      Frontend app with real-time updates, drag & drop and
+                      collaboration features.
+                    </p>
+                    <div class="tech-tags">
+                      <span class="tag">React</span
+                      ><span class="tag">TailwindCSS</span
+                      ><span class="tag">TypeScript</span>
+                    </div>
+                    <a
+                      href="https://github.com/NazarKhl/EventManager"
+                      class="project-link"
+                      target="_blank"
+                    >
+                      View on GitHub
+                      <i class="fas fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
               </div>
-              <a href="https://github.com/NazarKhl/EventManager" class="project-link" target="_blank">
-                View on GitHub
-                <i class="fas fa-arrow-right"></i>
-              </a>
+            </div>
+
+            <div class="project-card">
+              <div class="project-preview">
+                <div class="project-image code-demo">
+                  <div class="project-name">AI Code Review Assistant</div>
+                </div>
+                <div class="project-overlay">
+                  <div class="project-info">
+                    <h3>AI Code Review Assistant</h3>
+                    <p>
+                      Full-stack app that analyzes code snippets using local AI
+                      (Ollama)
+                    </p>
+                    <div class="tech-tags">
+                      <span class="tag">React</span>
+                      <span class="tag">Node.js</span>
+                      <span class="tag">Ollama</span>
+                    </div>
+                    <a
+                      href="https://github.com/NazarKhl/AICodeReview"
+                      class="project-link"
+                      target="_blank"
+                    >
+                      View on GitHub
+                      <i class="fas fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      
-      <div class="project-card">
-        <div class="project-preview">
-          <div class="project-image ecommerce-demo">
-    <div class="cart">
-      🛒
-      <div class="item">📦</div>
-      <div class="item">👕</div>
-      <div class="item">💳</div>
-    </div>
-    <div class="project-name">E-commerce Platform</div>
-  </div>
-          <div class="project-overlay">
-            <div class="project-info">
-              <h3>E-commerce Platform</h3>
-              <p>Complete store with catalog, cart, authentication & payments.</p>
-              <div class="tech-tags">
-                <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MySQL</span>
-              </div>
-              <a href="https://github.com/NazarKhl/E-commerce-Platform" class="project-link" target="_blank">
-                View on GitHub
-                <i class="fas fa-arrow-right"></i>
-              </a>
+      </section>
+
+      <section id="ai" class="ai-section">
+        <div class="container">
+          <h2>AI & Innovation</h2>
+          <p class="ai-data">
+            I actively leverage Artificial Intelligence to accelerate my own
+            workflow, exploring how modern technologies like
+            <strong
+              >Machine Learning, Natural Language Processing, and Generative
+              AI</strong
+            >
+            can streamline tasks and enhance productivity.
+          </p>
+          <p class="ai-data">
+            With hands-on experience in <strong>Ollama LLM</strong>, I build and
+            deploy lightweight, efficient AI models locally, enabling rapid
+            prototyping, automation, and maintaining full control over data
+            privacy.
+          </p>
+          <p class="ai-data">
+            From creating smart tools for automating repetitive coding tasks to
+            experimenting with
+            <strong>GPT-based assistants</strong> and data-driven
+            decision-making systems, I constantly push the boundaries of what’s
+            possible with code.
+          </p>
+          <p class="ai-data">
+            My goal is to not only stay ahead of the curve but also to
+            <strong>turn AI-driven ideas into practical solutions</strong>
+            that make my work faster, smarter, and more impactful.
+          </p>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section id="education">
+        <div class="container">
+          <h2>Education & Certifications</h2>
+          <div class="grid">
+            <div class="card">
+              <h3>BSc in Computer Science</h3>
+              <p>2022 - 2026</p>
+            </div>
+            <div class="card">
+              <h3>Full-Stack Engineer — Codecademy</h3>
+              <p>2024</p>
+            </div>
+            <div class="card">
+              <h3>Java Full Stack Spring Boot & Angular — Udemy</h3>
+              <p>2023</p>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
-<section id="ai" class="ai-section">
-  <div class="container">
-    <h2>AI & Innovation</h2>
-     <p class="ai-data">
-      I actively leverage Artificial Intelligence to accelerate my own workflow, exploring how modern technologies like 
-      <strong>Machine Learning, Natural Language Processing, and Generative AI</strong> can streamline tasks and enhance productivity.
-    </p>
-    <p class="ai-data">
-      With hands-on experience in <strong>Ollama LLM</strong>, I build and deploy lightweight, efficient AI models locally, 
-      enabling rapid prototyping, automation, and maintaining full control over data privacy.
-    </p>
-    <p class="ai-data">
-      From creating smart tools for automating repetitive coding tasks to experimenting with 
-      <strong>GPT-based assistants</strong> and data-driven decision-making systems, I constantly push the boundaries of what’s possible with code.
-    </p>
-    <p class="ai-data">
-      My goal is to not only stay ahead of the curve but also to <strong>turn AI-driven ideas into practical solutions</strong> 
-      that make my work faster, smarter, and more impactful.
-    </p>
-  </div>
-</section>
-
-
-    <!-- Education -->
-    <section id="education">
-      <div class="container">
-        <h2>Education & Certifications</h2>
-        <div class="grid">
-          <div class="card"><h3>BSc in Computer Science</h3><p>2022 - 2026</p></div>
-          <div class="card"><h3>Full-Stack Engineer — Codecademy</h3><p>2024</p></div>
-          <div class="card"><h3>Java Full Stack Spring Boot & Angular — Udemy</h3><p>2023</p></div>
+      <!-- Languages -->
+      <section id="languages">
+        <div class="container">
+          <h2>Languages</h2>
+          <div class="grid">
+            <div class="card">
+              <h3>English</h3>
+              <p>B2</p>
+            </div>
+            <div class="card">
+              <h3>Polish</h3>
+              <p>C1</p>
+            </div>
+            <div class="card">
+              <h3>Ukrainian</h3>
+              <p>Native</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Languages -->
-    <section id="languages">
-      <div class="container">
-        <h2>Languages</h2>
-        <div class="grid">
-          <div class="card"><h3>English</h3><p>B2</p></div>
-          <div class="card"><h3>Polish</h3><p>C1</p></div>
-          <div class="card"><h3>Ukrainian</h3><p>Native</p></div>
+      <!-- Contact -->
+      <section id="contact">
+        <div class="container">
+          <h2>Contact</h2>
+          <div class="contact-info">
+            <a href="tel:+48731180523" class="contact-item"
+              ><i class="fas fa-phone"></i> +48 731 180 523</a
+            >
+            <a href="mailto:nazarhlivnij@gmail.com" class="contact-item"
+              ><i class="fas fa-envelope"></i>nazarhlivnij@gmail.com</a
+            >
+            <a
+              href="https://www.instagram.com/nnazar.inst/"
+              class="contact-item"
+              ><i class="fab fa-instagram"></i> Instagram</a
+            >
+            <a
+              href="https://www.linkedin.com/in/nazar-khlivnyi-1453761b8/"
+              class="contact-item"
+              ><i class="fab fa-linkedin"></i> LinkedIn</a
+            >
+            <a href="https://github.com/NazarKhl" class="contact-item"
+              ><i class="fab fa-github"></i> GitHub</a
+            >
+          </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
+      </section>
+    </main>
+    <footer>
       <div class="container">
-        <h2>Contact</h2>
-        <div class="contact-info">
-          <a href="tel:+48731180523" class="contact-item"><i class="fas fa-phone"></i> +48 731 180 523</a>
-          <a href="mailto:nazarhlivnij@gmail.com" class="contact-item"><i class="fas fa-envelope"></i>nazarhlivnij@gmail.com</a>
-          <a href="https://www.instagram.com/nnazar.inst/" class="contact-item"><i class="fab fa-instagram"></i> Instagram</a>
-          <a href="https://www.linkedin.com/in/nazar-khlivnyi-1453761b8/" class="contact-item"><i class="fab fa-linkedin"></i> LinkedIn</a>
-          <a href="https://github.com/NazarKhl" class="contact-item"><i class="fab fa-github"></i> GitHub</a>
-        </div>
+        <p>&copy; 2025 Nazar Khlivnyi. All rights reserved.</p>
       </div>
-    </section>
-  </main>
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Nazar Khlivnyi. All rights reserved.</p>
-    </div>
-  </footer>
-<script src="script.js"></script>
-</body>
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>
